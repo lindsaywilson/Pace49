@@ -1,0 +1,80 @@
+
+
+/* ------------------------------ */
+/* MAIN LAYOUT 
+/* ------------------------------ */
+
+body{ color:#000; font-size:62.5%;}
+#page{ max-width:; margin:0 auto; }
+#header{ }
+#main{ }
+#content{ position:relative}
+
+
+/* ------------------------------ */
+/* HTML ELEMENTS
+/* ------------------------------ */
+
+h1, h2, h3, h4, h5{ }
+h1{ }
+h2{}
+h3{}
+
+p, ul, ol{ line-height:1.5em; font-size:1.4em; margin:0 0 20px; padding:0;} 
+ul, ol{ margin-left:1em; padding:0; }
+p:last-child, ul:last-child, ol:last-child{ margin-bottom:0}
+ul{ list-style:disc; }
+ul li, ol li{ padding-left:5px; padding-bottom:5px; }
+ul ul,
+ol ol{ font-size:1em; }
+ul ul{ list-style:none;}
+
+a{ color:#000; outline:none;}
+a:active{ outline:none}
+a:link{ outline:none}
+a:hover{ text-decoration:none}
+img{ vertical-align:middle}
+
+
+/* DRUPAL OVERRIDES
+----------------------------------*/
+#admin-menu .dropdown li{ font-size:9px}
+div.messages{ font-size:1em}
+div.messages p,
+div.messages ul{ font-size:1em}
+
+ul.tabs-primary{ position:absolute; top:0; right:0; margin:0; padding:0; font-size:1em; background:none;}
+ul.tabs-primary li{ margin:0; padding:0 1px 0 0; border:none; background:none; text-shadow:none; border-radius:0; list-style:none; float:left}
+ul.tabs-primary li a{ border:none; background:#000; color:#fff; text-transform:uppercase; letter-spacing:0; border-radius:0; padding:2px 5px; text-decoration:none }
+ul.tabs-primary li a:hover{ opacity:0.6}
+
+
+/* ------------------------------ */
+/* PAGE ELEMENTS
+/* ------------------------------ */
+
+/*
+----------------------------------*/
+
+
+/* ------------------------------ */
+/* CONTENT TYPES
+/* ------------------------------ */
+
+/*
+----------------------------------*/
+
+
+/* ------------------------------ */
+/* VIEWS
+/* ------------------------------ */
+
+/* GLOBAL VIEW STYLES
+----------------------------------*/
+.views-row{ position:relative; }
+.views-field-edit-node a{ position:absolute; right:1px; top:1px; font-size:.9em; text-transform:uppercase; display:inline-block; padding:4px 8px; text-decoration:none; z-index:2; line-height:1; color:#fff; background:#000; display:inline; height:auto }
+.views-field-edit-node a:hover{ opacity:0.6}
+
+
+/*
+----------------------------------*/

@@ -1,0 +1,224 @@
+
+/* ------------------------------ */
+/* DESKTOP LARGE
+/* ------------------------------ */
+
+@media (min-width: 1601px) {
+
+#main, #header, #toggles{ transform:translate3d(0,0,0); max-width:83%; margin-left:2%; margin-right:2%}
+#menu-toggle{ display:none}
+#nav, #filter{ right:-13%; width:13%}
+#nav{ right:0; }
+
+.filter-open #header, .filter-open #toggles, .filter-open #main,
+.filter-open #loading{ transform:translate3d(-0,0,0); -o-transform: translate3d(-0,0,0); -ms-transform: translate3d(-0,0,0); -moz-transform: translate3d(-0,0,0); -webkit-transform: translate3d(-0,0,0); }
+.filter-open #filter{ transform:translate3d(-100%,0,0); -o-transform: translate3d(-100%,0,0); -ms-transform: translate3d(-100%,0,0); -moz-transform: translate3d(-100%,0,0); -webkit-transform: translate3d(-100%,0,0); }
+
+.filter-open #page-content{ transform:translate3d(0,0,0); -o-transform: translate3d(0,0,0); -ms-transform: translate3d(0,0,0); -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); margin-right:0 }
+
+.thumb{ width:16.66%}
+
+}
+
+
+@media (max-width: 1600px) {
+
+
+
+}
+
+
+/* ------------------------------ */
+/* TABLET
+/* ------------------------------ */
+
+@media (max-width: 1024px) {
+
+/* CONTENT TYPES
+/* ------------------------------ */
+
+/* ARTWORK */
+#artwork .close{ right:15px; top:15px}
+#artwork #artwork-prev{ left:15px; }
+#artwork #artwork-next{ right:15px; }
+#artwork #artwork-prev:hover{ left:13px}
+#artwork #artwork-next:hover{ right:13px}
+
+}
+
+
+@media (max-width: 960px) {
+
+/* MAIN LAYOUT 
+/* ------------------------------ */
+.width{ margin:0 30px}
+
+
+/* PAGE ELEMENTS
+/* ------------------------------ */
+.thumb{ width:25%}
+.thumb .inner{ padding:0 7px 14px;}
+.info-bar{ margin:0 -30px; }
+
+/* TOGGLES */
+#floating-filter-toggle{ right:45px}
+.floating-toggle #floating-filter-toggle{ top:15px;}
+
+
+/* CONTENT TYPES
+/* ------------------------------ */
+
+/* ARTWORK */
+#artwork .close{ right:5px; top:10px}
+#artwork #artwork-prev{ left:5px; }
+#artwork #artwork-next{ right:5px; }
+#artwork #artwork-prev:hover{ left:3px}
+#artwork #artwork-next:hover{ right:3px}
+
+
+/* VIEWS
+/* ------------------------------ */
+
+.view.thumbs{ margin:0 -7px}
+
+/* EXHIBITIONS */
+.view-exhibitions .views-field-title{ width:15%}
+.view-exhibitions .views-field-body{ width:85%}
+
+}
+
+
+
+/* ------------------------------ */
+/* MOBILE
+/* ------------------------------ */
+
+@media (max-width: 740px) {
+	
+/* FRONT */
+.front #overlay{ position:fixed !important; width:100% !important}
+.front #logo{ margin-left:0}
+.front #toggles{display:block; margin:0; z-index:2}
+.front #menu-toggle{ top:0; width:124px; }
+.front #menu-toggle:before{ background:url(../images/home_menu.png); width:124px; height:70px; display:block; content:''; position:absolute; top:0; left:0}
+.front #menu-toggle a{ position:relative;top:10px; left:37px}
+.front #nav{ right:-190px; position:absolute }
+.front.menu-open #nav{ position:relative; float:right;}
+.front #nav > .inner{ margin-left:0}
+.front.menu-open #nav > .inner{ margin-left:-5px}
+.front #nav:before{ left:0}
+.front.menu-open #nav:before{ left:-5px}
+.front #home{ position:relative; bottom:auto; margin:0 0 20px; max-width:100%; left:0; bottom:0; text-align:center}
+.front.menu-open #home{ display:none}
+.front #logo-home{ padding:0 20px}
+.front .view-news.view-display-teaser .info-box{ min-height:inherit; max-width:inherit}
+
+}
+
+
+@media (max-width: 600px) {
+
+/* MAIN LAYOUT 
+/* ------------------------------ */
+.width{ margin:0 10px}
+
+.sidebar-first #page-content,
+.sidebar-first #sidebar,
+.sidebar-first h1#page-title{ float:none; width:auto;}
+.sidebar-first #sidebar{ margin:0 auto 30px; max-width:280px}
+.sidebar-first #sidebar > .inner{ padding-left:0}
+
+
+/* PAGE ELEMENTS
+/* ------------------------------ */
+.thumb{ width:50%}
+.thumb .inner{ padding:0 5px 10px}
+.info-box{ padding:20px}
+.info-bar{ text-align:center; margin:0 -10px; }
+.info-bar .inner{ padding-left:30px; padding-right:5px}
+.info-bar #share{ }
+
+/* TOGGLES */
+.filter-open #project-info-toggle{ display:none}
+#floating-filter-toggle{ right:20px}
+.floating-toggle #floating-filter-toggle{ top:10px;}
+
+
+/* CONTENT TYPES
+/* ------------------------------ */
+
+/* ARTWORK */
+#artwork > .inner{ padding-top:10px}
+#artwork-image{ margin-bottom:20px}
+#artwork-info-bar .inner{ padding:0 20px 0 30px}
+
+.node-type-artwork #main{ margin-top:10px}
+#news-info-bar .inner{ padding-left:30px; margin-left:0}
+
+
+/* VIEWS
+/* ------------------------------ */
+.view.thumbs{ margin:0 -5px}
+
+/* LATEST NEWS */
+.view-news.view-display-teaser .full-width{ padding:20px}
+.view-news.view-display-teaser .info-box{ max-width:none}
+.view-news.view-display-teaser .field-name-field-intro{ margin:0 0 20px;}
+.view-news.view-display-teaser a.read-more{ position:relative; bottom:0}
+
+/* EXHIBITIONS */
+.view-exhibitions .views-field-title,
+.view-exhibitions .views-field-body{ width:100%}
+.view-exhibitions .views-field-title{ font-weight:bold}
+
+}  
+
+
+@media (max-width: 480px) {
+
+/* PAGE ELEMENTS
+/* ------------------------------ */
+.info-bar .arrow, .info-bar #share{ float:none; }
+
+
+/* CONTENT TYPES
+/* ------------------------------ */
+
+/* ARTWORK */
+#artwork > .inner{ padding:10px 0 0}
+#artwork-image{ margin-bottom:80px; margin-top:20px; z-index:999}
+#artwork #artwork-next{ background-position:right bottom}
+#artwork #artwork-prev{ background-position:left bottom}
+#artwork .info-bar{ margin:0}
+#artwork-info-bar .arrow{ position:relative; top:-45px}
+#artwork-info-bar .arrow:before{ display:none}
+#artwork-info-bar #share{ margin:-37px 0 0}
+
+.page-images #artwork .artwork-pager{ top:75px}
+.page-images .info-bar .inner{ padding-left:35px; padding-right:35px}
+.page-images #artwork-info-bar .arrow{ top:0}
+
+
+}
+
+
+@media (max-width: 400px) {
+	
+/* TOGGLES */
+#filter-toggle .type{ display:none}
+	
+}
+
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) { 
+  
+#logo{ background:url(../images/logo@2x.png); background-size:92px 27px; }
+.front #logo{ background:url(../logo_white@2x.png); background-size:92px 27px; }
+
+}
