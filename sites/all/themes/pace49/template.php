@@ -34,9 +34,13 @@ function pace49_preprocess_maintenance_page(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("html" in this case.)
  */
-/* -- Delete this line if you want to use this function
+
 function pace49_preprocess_html(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+	
+	// Template suggeston for ajax content
+	if (isset($_GET['response_type']) && $_GET['response_type'] == 'ajax') {
+		$variables['theme_hook_suggestions'][] = 'html__ajax';
+	}
 
   // The body tag's classes are controlled by the $classes_array variable. To
   // remove a class from $classes_array, use array_diff().
@@ -52,9 +56,14 @@ function pace49_preprocess_html(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
+
 function pace49_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+	
+	// Template suggeston for ajax content
+    if (isset($_GET['response_type']) && $_GET['response_type'] == 'ajax') {
+        $variables['theme_hook_suggestions'][] = 'page__ajax';
+    }
+	
 }
 // */
 

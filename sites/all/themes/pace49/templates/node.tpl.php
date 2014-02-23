@@ -6,22 +6,39 @@
  * Complete documentation for this file is available online.
  * @see https://drupal.org/node/1728164
  */
+ global $language;
+ $lang = $language->language;
+ $uri = explode('/', request_uri());
+ 
+ // Get youtube video id
+ if (!function_exists('getYTVideoId')) {
+    function getYTVideoId($url){
+		$url = $url.'&';
+		$pattern = '/v=(.+?)&+/';
+		preg_match($pattern, $url, $matches);
+		return ($matches[1]);
+	}
+  } 
+
 ?>
 <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
-  <?php if ($title_prefix || $title_suffix || $display_submitted || $unpublished || !$page && $title): ?>
+  
+  <?php 
+  if($node->type=='news' || 
+  	 $node->type=='testimonial' || 
+	 $node->type=='client_area_download' || 
+	 $node->type=='distributor' || 
+	($node->type=='career' && $view_mode == 'teaser')
+	){
+  	include '/'.path_to_theme().'/templates/includes/node-edit.inc.php';
+  }
+  ?>  
+  
+  <?php if ($unpublished || isset($uri[2]) && $uri[1] != 'procedures'): ?>
     <header>
-      <?php print render($title_prefix); ?>
-      <?php if (!$page && $title): ?>
-        <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-
-      <?php if ($display_submitted): ?>
-        <p class="submitted">
-          <?php print $user_picture; ?>
-          <?php print $submitted; ?>
-        </p>
+      
+      <?php if( isset($uri[2]) && $uri[1] != 'es' && ($node->type == 'page' || $node->type == 'client_area_video')): ?>
+      	<h2><?php print $node->title; ?></h2>
       <?php endif; ?>
 
       <?php if ($unpublished): ?>
@@ -30,15 +47,52 @@
     </header>
   <?php endif; ?>
 
-  <?php
-    // We hide the comments and links now so that we can render them later.
-    hide($content['comments']);
-    hide($content['links']);
-    print render($content);
-  ?>
-
-  <?php print render($content['links']); ?>
-
-  <?php print render($content['comments']); ?>
+  <?php 
+	
+	// NEWS
+	if($node->type == 'news') :
+		
+		if($view_mode == 'full'):
+			print render($content['title_field']); ?>
+			<p class="posted"><?php print t('Posted ') . date('l jS, Y', $node->created) ?></p>
+            <?php print render($content['body']) ?>
+            
+        <?php else: ?>
+        	<h2><a href="/news"><?php print $node->title_field[$lang][0]['safe_value']; ?></a></h2>
+            <div class="field field-name-body">
+				<?php print substr($node->body[$lang][0]['safe_value'],0,130).'...'; ?>
+            </div>
+        	<p class="btn"><a class="btn" href="/news">Read More</a></p>
+        <?php endif ;
+	
+	// CAREER
+	elseif($node->type == 'career' && $view_mode == 'full') : ?>
+    	<a class="btn top" href="/careers">Back to Listings</a>
+    <?php print render($content);
+	
+	// DISTRIBUTOR
+	elseif($node->type == 'distributor'): ?>
+    <h3><a rel="external" href="<?php $node->field_website_url['und'][0]['safe_value']; ?>"><?php print $node->title_field[$lang][0]['safe_value']; ?></a></h3>
+	<?php print render($content);
+	
+	// VIDEO
+	elseif($node->type == 'client_area_video'): 
+	drupal_add_js('/'.path_to_theme().'/js/jquery.fitvids.js');
+	$id = getYTVideoId($node->field_video_url['und'][0]['safe_value']);?>
+    <div class="fitvids"><iframe width="640" height="360" src="//www.youtube.com/embed/<?php print $id; ?>?feature=player_detailpage" frameborder="0" allowfullscreen></iframe></div>
+	
+    <?php
+	// DEFAULT
+    else:
+    	print render($content);
+	endif;	
+	
+	// CAREER
+	if($node->type == 'career' && $view_mode == 'full') : ?>
+    	<p style="margin-top:30px"><a class="btn" href="/careers">Back to Listings</a></p>
+    <?php endif;
+	if($node->type == 'career' && $view_mode == 'teaser') : ?>
+    	<p class="btn"><a class="btn" href="<?php print $node_url ?>">Read More</a></p>
+    <?php endif;?>
 
 </article>
