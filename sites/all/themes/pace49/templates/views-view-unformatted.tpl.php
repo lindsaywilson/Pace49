@@ -15,14 +15,12 @@
 	switch($view->name){
   	case 'news':
 		if($view->current_display == 'home'){
-			$classes_array[$id] .= ' grid grid-third view-link-list';
+			$classes_array[$id] .= ' grid';
 		}
 		break;
 	case 'distributors':
-		$classes_array[$id] .= ' grid grid-third';
-	break;
-	case 'careers':
-		$classes_array[$id] .= ' view-link-list';
+	case 'contact':
+		$classes_array[$id] .= ' grid';
 	break;
   }
   $classes_array[$id] .= ' clearfix';

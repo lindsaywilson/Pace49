@@ -4,22 +4,29 @@
 /* MAIN LAYOUT/ELEMENTS
 /* ------------------------------ */
 
-body{ color:#3c3c3c; font-size:62.5%; background:url(../images/tile_bg.png); font-family:'helvc'}
+body{ color:#3c3c3c; font-size:62.5%; background:url(../images/tile_bg.png) center 0; font-family:'helvc'}
 .width > .inner{ max-width:960px; margin:0 auto; position:relative }
+
+#main > .inner{ padding-top:37px}
+#content{ padding:0 0 70px}
+.content_two #content,
+.content_two.content_three #content_two{ padding-bottom:25px}
+#content_two, #content_three{ padding:25px 0}
+#content_two{ background:rgba(224,224,224,0.4)}
+.content_two #content_two,
+#content_three{ padding-bottom:70px}
 
 .one-sidebar.sidebar-first #content{ float:right; width:62%; }
 .one-sidebar.sidebar-first .region-sidebar-first{ float:left; width:37%; }
 .one-sidebar.sidebar-second #content{ float:left; width:52%}
 .one-sidebar.sidebar-second .region-sidebar-second{ padding-top:5px; float:right; max-width:420px; width:43.75%; margin-bottom:85px}
 
-#main > .inner{ padding-top:37px}
-#content{ padding:0 0 70px}
-
-.grid{ float:left}
-.grid-third{ width:33.33%}
-.grid-third:nth-of-type(3n+1) > .inner{ margin-right:44px}
-.grid-third:nth-of-type(3n+2) > .inner{ margin:0 22px}
-.grid-third:nth-of-type(3n+3) > .inner{ margin-left:44px}
+.grid{ float:left; margin-bottom:30px}
+.grid-third .row:last-child .grid{ margin-bottom:0}
+.grid-third .grid{ width:33.33%}
+.grid-third .grid:nth-of-type(3n+1) > .inner{ margin-right:44px}
+.grid-third .grid:nth-of-type(3n+2) > .inner{ margin:0 22px}
+.grid-third .grid:nth-of-type(3n+3) > .inner{ margin-left:44px}
 
 
 /* ------------------------------ */
@@ -67,6 +74,7 @@ body{ color:#3c3c3c; font-size:62.5%; background:url(../images/tile_bg.png); fon
 .login .form-actions input[type="submit"]{ marign-top:7px; color:#fff; border-color:#fff}
 .login .form-actions input[type="submit"]:hover{ border-color:#fff; background:#6f6f6f}
 #login .item-list ul{ float:right; font-size:1.8em; margin:0; padding:0; list-style:none; font-family:'helvbdc'; line-height:1.6em }
+#login .item-list ul li.first{ display:none}
 #login .item-list ul li a{ color:#c8c8c8; text-decoration:none}
 #login .item-list ul li a:hover{ text-decoration:underline}
 #forgot-password{ top:-200px}
@@ -101,6 +109,7 @@ body{ color:#3c3c3c; font-size:62.5%; background:url(../images/tile_bg.png); fon
 #footer .contact-details{ padding-top:45px}
 #footer .contact-details .red,
 #footer .contact-details .red a{ color:#3c3c3c}
+#footer .contact-details .red a:hover{ color:#000}
 #back-to-top{ display:none}
 
 
@@ -108,21 +117,25 @@ body{ color:#3c3c3c; font-size:62.5%; background:url(../images/tile_bg.png); fon
 /* NAVIGATION
 /* ------------------------------ */
 
-#header-nav{position:absolute; bottom:-172px; z-index:8}
+#header-nav{position:absolute; bottom:-175px; z-index:8; width:100%}
+.nav .menu-block-wrapper{ text-align:center; position:relative}
+.nav .menu-block-wrapper > ul.menu{ display:table; margin:0 auto}
+.nav .menu-block-wrapper > ul.menu > li{ display:table-cell; float:left}
+
 .nav ul, .nav li{ margin:0; padding:0; list-style:none; }
-.nav ul{ font-size:2.22em; font-family:'helvbc'}
-.nav ul li{ float:left; position:relative}
-.nav ul > li:not(:last-child){ margin-right:50px}
+.nav ul{ font-size:2.22em; font-family:'helvbc'; line-height:40px }
+.nav ul li{ position:relative}
+.nav ul > li:not(:last-child){ margin-right:55px}
 .nav ul li a{ text-decoration:none; display:block; color:#3c3c3c; }
 .nav div > ul > li:hover > a,
 .nav ul li a:hover{ color:#c81e1e}
 
-.nav ul li:hover ul{ display:block; opacity:1; }
-.nav ul li ul{ font-size:1em; display:none; opacity:0; position:absolute; left:0; top:100%; background:#303030; width:300px; font-family:'helvbdc'; padding:10px 0 5px}
-.nav ul li ul li{ padding:0 15px 5px; float:none; margin:0}
-.nav ul li ul li a{ color:#fff}
+.nav ul li:hover ul{ display:block; }
+.nav ul li ul{ font-size:1em; display:none; position:absolute; left:-10px; top:100%; background:#303030; width:300px; font-family:'helvbdc'; padding:10px 0 5px; text-align:left; line-height:1.5em}
+.nav ul li ul li{ padding:0 15px 5px; float:none; margin:0; display:block}
+.nav ul li ul li a{ color:#fff; }
 
-.nav ul li ul li ul{ font-size:.75em; padding:0; position:static; width:auto}
+.nav ul li ul li ul{ font-size:.8em; padding:0 0 5px; position:static; width:auto;}
 .nav ul li ul li ul li{ padding:0; }
 .nav ul li ul li ul li a{ color:#c8c8c8}
 
@@ -165,9 +178,11 @@ p:last-child, ul:last-child, ol:last-child{ margin-bottom:0}
 ul, ol{ margin-left:1em; padding:0; }
 ul{ list-style:disc; }
 ul li, ol li{ padding-left:5px; padding-bottom:10px; }
+ul p, ol p,
 ul ul,
 ol ol{ font-size:1em; }
 ul ul{ list-style:none;}
+strong{ font-weight:normal; font-family:'helvbdc'}
 
 
 /* LINKS
@@ -183,12 +198,13 @@ img{ vertical-align:middle}
 ----------------------------------*/
 input, textarea, select{ font-size:1.5em}
 .form-item{ margin:0 0 15px}
-.form-item label{ margin:0 0 15px; font-size:2em; font-family:'helvbdc'; line-height:1}
+.form-item label{ margin:0 0 15px; font-size:2em; font-family:'helvbdc'; line-height:1; font-weight:normal}
 .form-item input[type="text"],
 .form-item input[type="password"]{ width:100%; border:none; padding:3px 5px}
 .form-actions input[type="submit"]{ font-family:'helvbdc'; background:none; border:2px solid #000; border-radius:5px; padding:2px 15px; font-size:1.8em; cursor:pointer; color:#000; }
 #main .form-item input[type="text"], 
 #main .form-item input[type="password"]{ border:1px solid #000}
+#main fieldset{ border:none}
 
 
 /* CLASSES
@@ -258,6 +274,42 @@ a.download{ font-family:'helvbc'; font-size:2.4em; min-height:53px; position:rel
 a.download:before{ content:''; display:block; position:absolute; width:40px; height:53px; background:url(../images/sprite.png); left:0; top:5px}
 
 
+/* SEARCH
+----------------------------------*/
+#main #search-form{ margin-bottom:30px}
+#main #search-form input[type="text"]{ max-width:400px}
+#main #search-form input[type="submit"]{ font-family:'helvbdc'; background:none; border:2px solid #a32439; border-radius:5px; padding:2px 15px; font-size:1.8em; cursor:pointer; color:#a32439;}
+#main #search-form input[type="submit"]:hover{ color:#4f121c; border-color:#4f121c; text-decoration:none}
+#main #search-form .container-inline div, 
+#main #search-form .container-inline label{ display:block}
+.search-info{ display:none}
+p.search-snippet{ margin:0}
+
+
+/* REGISTER
+----------------------------------*/
+#user-register-form input[type="text"]{ max-width:400px}
+.form-item .description{ font-size:2em}
+
+
+/* MY ACCOUNT
+----------------------------------*/
+#user-profile-form input[type="text"],
+#user-profile-form input[type="password"],
+#user-profile-form .confirm-parent, 
+#user-profile-form .password-parent{ max-width:400px; width:100%}
+#user-profile-form .description{ margin:10px 0 20px}
+#user-profile-form .password-strength{ font-size:1.5em; margin:0; width:200px}
+#user-profile-form .form-item .password-suggestions.description{ font-size:2em}
+#user-profile-form .form-item .password-suggestions.description ul{ font-size:1em}
+#user-profile-form legend{ font-size:2em; font-family:'helvbdc'}
+#user-profile-form .form-item-language.form-type-radios > label{ display:none}
+#user-profile-form .form-item-language label{ font-family:'helvc'}
+#user-profile-form #edit-actions{ margin-top:20px}
+#user-profile-form div.form-item div.password-suggestions{ border:none; padding:15px; background:rgba(224, 224, 224, 0.4)}
+#user-profile-form div.form-item div.password-suggestions li{ padding:0; margin:0}
+
+
 /* ------------------------------ */
 /* CONTENT TYPES/VIEWS
 /* ------------------------------ */
@@ -267,9 +319,19 @@ a.download:before{ content:''; display:block; position:absolute; width:40px; hei
 ----------------------------------*/
 .node{ position:relative}
 .views-row{ position:relative; }
+
 .views-field-edit-node a{ position:absolute; right:1px; top:1px; font-size:1.1em; text-transform:uppercase; display:inline-block; padding:4px 8px; text-decoration:none; z-index:2; line-height:1; color:#fff; background:#000; display:inline; height:auto }
 .views-field-edit-node a:hover{ opacity:0.6}
+
 .view-link-list h2{ font-family:'helvbc'; font-size:2.4em}
+
+.view-list{ margin-top:25px}
+.view-list h4,
+.node-distributor h4,
+.node-staff-member h4{ margin-top:20px}
+
+.tabledrag-toggle-weight-wrapper{ display:none}
+table.draggable{ margin:10px 0; font-size:2em}
 
 
 /* FRONT
@@ -293,9 +355,9 @@ a.download:before{ content:''; display:block; position:absolute; width:40px; hei
 /* TESTIMONIALS
 ----------------------------------*/
 .view-testimonials .views-row:not(.views-row-last){ border-bottom:1px solid #000; padding-bottom:25px; margin-bottom:25px}
-.view-testimonials h3{ margin-bottom:5px}
-.view-testimonials .field-name-body{ margin-bottom:15px}
-.view-testimonials .field-name-field-company p{ line-height:1.25em; margin:0}
+.node-testimonial h3{ margin-bottom:5px}
+.node-testimonial .field-name-body{ margin-bottom:15px}
+.node-testimonial .field-name-field-company p{ line-height:1.25em; margin:0}
 
 
 /* CAREERS
@@ -312,15 +374,34 @@ a.download:before{ content:''; display:block; position:absolute; width:40px; hei
 .node-distributor .field-name-field-located-in .field-items{ font-family:'helvbdc'}
 
 
+/* CONTACT
+----------------------------------*/
+.node-36 .field-name-body ul,
+.node-36 .field-name-body ul li{ padding:0; margin:0; list-style:none}
+
+#block-views-contact-order-industrial h2,
+#block-views-contact-order-horticulture h2{ font-size:2em; margin:30px 0 0}
+
+.node-staff-member h3{ font-size:2em; margin-bottom:5px}
+.node-staff-member .field-name-field-position,
+.node-staff-member .field-name-field-email{ font-size:2em}
+.node-staff-member .field-name-field-email{ margin:5px 0 0}
+.node-staff-member .field-name-body ul,
+.node-staff-member .field-name-body ul li{ margin:0; padding:0; list-style:none; line-height:1.2em}
+.node-staff-member .field-name-body ul li{ font-family:'helvbdc'}
+.node-staff-member .field-name-body ul ul li{ font-family:'helvc'; margin-left:20px}
+
+
+
 /* CLIENT AREA DOWNLOAD
 ----------------------------------*/
 .field-name-field-downloads-private ul,
 .field-name-field-downloads-private ul li{  margin:0; padding:0; list-style:none; font-size:1em}
-.view-client-area-downloads h2{ margin-bottom:20px}
-.view-client-area-downloads h3{ font-family:'helvbc'; font-size:2.4em; line-height:1; margin-bottom:5px}
-.view-client-area-downloads .field-item{ min-height:53px; position:relative; padding-left:60px; margin-bottom:25px}
-.view-client-area-downloads .field-item:before{ content:''; display:block; position:absolute; width:40px; height:53px; background:url(../images/sprite.png); left:0; top:5px}
-.view-client-area-downloads p{ margin-bottom:0}
+.node-client-area-download h2{ margin-bottom:20px}
+.node-client-area-download h3{ font-family:'helvbc'; font-size:2.4em; line-height:1; margin-bottom:5px}
+.node-client-area-download .field-item{ min-height:53px; position:relative; padding-left:60px; margin-bottom:25px}
+.node-client-area-download .field-item:before{ content:''; display:block; position:absolute; width:40px; height:53px; background:url(../images/sprite.png); left:0; top:5px}
+.node-client-area-download ul li p{ font-size:2em; margin-bottom:0}
 
 
 /* CLIENT AREA VIDEO

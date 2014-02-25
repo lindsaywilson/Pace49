@@ -45,8 +45,8 @@
  */
 ?>
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php if (!$label_hidden): ?>
-    <div class="field-label"<?php print $title_attributes; ?>><p><?php print $label ?>:&nbsp;</p></div>
+  <?php if (!$label_hidden && !empty($items)): ?>
+    <div class="field-label"<?php print $title_attributes; ?>><h4><?php print $label ?>:&nbsp;</h4></div>
   <?php endif; ?>
   <div class="field-items"<?php print $content_attributes; ?>>
     <?php foreach ($items as $delta => $item): ?>

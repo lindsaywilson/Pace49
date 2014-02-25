@@ -87,7 +87,8 @@ scripts[] = js/script.js
 ;   <?php print $header_top; ?>
 
 regions[content]        = Content
-regions[content_bottom]	= Content bottom
+regions[content_two]	= Content Two
+regions[content_three]	= Content Three
 regions[sidebar_first]  = First sidebar
 regions[sidebar_second] = Second sidebar
 

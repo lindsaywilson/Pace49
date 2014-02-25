@@ -6,6 +6,7 @@
  * Complete documentation for this file is available online.
  * @see https://drupal.org/node/1728148
  */
+ global $user;
 ?>
 <div id="top"></div>
 <div id="page">
@@ -13,15 +14,15 @@
   
   <div id="header-bar" class="width">
   <div class="inner clearfix">
-  	<div id="nav_toggle" class="mobile_toggle"><a class="icon menu open" href="#">Menu</a></div>
-    <div id="search_toggle" class="mobile_toggle"><a class="icon search open" href="#">Search</a></div>
+  	<div id="nav_toggle" class="mobile_toggle"><a class="icon menu open" href="#"><?php print t('Menu'); ?></a></div>
+    <div id="search_toggle" class="mobile_toggle"><a class="icon search open" href="#"><?php print t('Search'); ?></a></div>
     <div id="login_toggle">
 		<?php if (!user_is_logged_in()): ?>
-        <a class="icon login open" href="#">Login</a>
+        <a class="icon login open" href="#"><?php print t('Login'); ?></a>
         <?php endif; ?>
         <?php if (user_is_logged_in()): ?>
-        <a class="icon account" href="/user">My Account</a>
-        <a class="icon logout" href="/user/logout">Logout</a>
+        <a class="icon account" href="/user/<?php print $user->uid ?>/edit"><?php print t('My Account'); ?></a>
+        <a class="icon logout" href="/user/logout"><?php print t('Logout'); ?></a>
         <?php endif; ?>
     </div>
     <div id="language_toggle">
@@ -40,7 +41,7 @@
     <div id="login" class="transition login">
     	<h2><?php print t('Client Area Access'); ?></h2>
     	<p><?php print t('Returning users can login to the Client Area to access documentation, news, and videos. New user?'); ?>
-        <a href="#" class="reverse"><?php print t('Create a new account.'); ?></a></p>
+        <a href="/user/register" class="reverse"><?php print t('Create a new account.'); ?></a></p>
         <h2><?php print t('Returning User Login'); ?></h2>
 		<?php
             $block = module_invoke('user', 'block_view', 'login');
@@ -120,25 +121,25 @@
   
   
   <?php
-  	if((isset($node) && isset($node->field_header_image['und'])) 
-	|| (isset($node) && $node->type == 'career')
-	|| (isset($node) && $node->type == 'client_area_video')
-	|| (strpos(request_uri(), '/procedures') !== FALSE)
-	|| (strpos(request_uri(), '/industries') !== FALSE)
-	):
-  		if($node->type == 'career'){
-			$node = node_load(16);
-		}
-		if($node->type == 'client_area_video' || strpos(request_uri(), '/videos') !== FALSE){
-			$node = node_load(29);
-		} 
+  		if(isset($node) && $node->type == 'career'){ $node = node_load(16); }
+		if(isset($node) && $node->type == 'news'){ $node = node_load(9); }
+		if(isset($node) && $node->type == 'testimonial'){ $node = node_load(12); }
+		if(isset($node) && $node->type == 'staff_member'){ $node = node_load(36); }
+		if(isset($node) && $node->type == 'distributor'){ $node = node_load(31); }
+		if(isset($node) && $node->type == 'client_area_video'){ $node = node_load(29); } 
 		if((strpos(request_uri(), '/procedures') !== FALSE)){
-			$node = node_load(18);
+			$node = node_load(18); }
+		if((strpos(request_uri(), '/industries') !== FALSE) || strpos(request_uri(), '/industrias') !== FALSE){
+			$node = node_load(21);}
+		if((strpos(request_uri(), '/search') !== FALSE)){
+			$node = node_load(4);
+			$node->title = 'Search';}
+		if(isset($node->field_header_image['und'])){
+			$header_image = file_create_url($node->field_header_image['und'][0]['uri']);
+		} else{
+			$aboutNode = node_load(4);
+			$header_image = file_create_url($aboutNode->field_header_image['und'][0]['uri']);
 		}
-		if((strpos(request_uri(), '/industries') !== FALSE)){
-			$node = node_load(21);
-		}
-		$header_image = file_create_url($node->field_header_image['und'][0]['uri']);
   ?>
   <div id="header-image" class="width" style="background-image:url(<?php print $header_image; ?>)">
   <div class="inner clearfix">
@@ -156,7 +157,6 @@
   
   </div>
   </div>
-  <?php endif; ?>
 
 
   <div id="main" class="width">
@@ -169,9 +169,9 @@
       <?php if ($action_links): ?>
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
-      <?php if(isset($node) && !isset($node->field_header_image['und']) && $node->title != ''): ?>
+      <!--<?php if(isset($node) && !isset($node->field_header_image['und']) && $node->title != ''): ?>
       	<h1 id="page-title"><?php print $node->title; ?></h1>
-	  <?php endif; ?>
+	  <?php endif; ?>-->
 	  <?php print render($page['content']); ?>
       <?php print $feed_icons; ?>
     </div>
@@ -191,6 +191,27 @@
 
   </div>
   </div> <!-- /#main -->
+  
+  <?php
+	// Render the content areas to see if there's anything in them
+	$content_two  = render($page['content_two']);
+	$content_three = render($page['content_three']);
+  ?>
+  <?php if($content_two): ?>
+  <div id="content_two" class="width">
+  <div class="inner clearfix">
+	<?php print render($page['content_two']); ?>
+  </div>
+  </div>
+  <?php endif; ?>
+  
+  <?php if($content_three): ?>
+  <div id="content_three" class="width">
+  <div class="inner clearfix">
+  	<?php print render($page['content_three']); ?>
+  </div>
+  </div>
+  <?php endif; ?>
   
   
   <footer id="footer" class="width pink-bg">

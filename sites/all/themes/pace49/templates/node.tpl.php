@@ -10,6 +10,8 @@
  $lang = $language->language;
  $uri = explode('/', request_uri());
  
+ $id = str_replace(' ', '-', $node->title);
+
  // Get youtube video id
  if (!function_exists('getYTVideoId')) {
     function getYTVideoId($url){
@@ -21,13 +23,14 @@
   } 
 
 ?>
-<article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<article id="<?php print $id; ?>" class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   
   <?php 
   if($node->type=='news' || 
   	 $node->type=='testimonial' || 
 	 $node->type=='client_area_download' || 
 	 $node->type=='distributor' || 
+	 $node->type=='staff_member' || 
 	($node->type=='career' && $view_mode == 'teaser')
 	){
   	include '/'.path_to_theme().'/templates/includes/node-edit.inc.php';
@@ -54,15 +57,15 @@
 		
 		if($view_mode == 'full'):
 			print render($content['title_field']); ?>
-			<p class="posted"><?php print t('Posted ') . date('l jS, Y', $node->created) ?></p>
+			<p class="posted"><?php print t('Posted ') . date('F jS, Y', $node->created) ?></p>
             <?php print render($content['body']) ?>
             
         <?php else: ?>
-        	<h2><a href="/news"><?php print $node->title_field[$lang][0]['safe_value']; ?></a></h2>
+        	<h2><a href="/news#<?php print $id; ?>"><?php print $node->title_field[$lang][0]['safe_value']; ?></a></h2>
             <div class="field field-name-body">
 				<?php print substr($node->body[$lang][0]['safe_value'],0,130).'...'; ?>
             </div>
-        	<p class="btn"><a class="btn" href="/news">Read More</a></p>
+        	<p class="btn"><a class="btn" href="/news#<?php print $id; ?>">Read More</a></p>
         <?php endif ;
 	
 	// CAREER
@@ -72,7 +75,7 @@
 	
 	// DISTRIBUTOR
 	elseif($node->type == 'distributor'): ?>
-    <h3><a rel="external" href="<?php $node->field_website_url['und'][0]['safe_value']; ?>"><?php print $node->title_field[$lang][0]['safe_value']; ?></a></h3>
+    <h3><a rel="external" href="<?php print $node->field_website_url['und'][0]['safe_value']; ?>"><?php print $node->title; ?></a></h3>
 	<?php print render($content);
 	
 	// VIDEO

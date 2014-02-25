@@ -1,27 +1,5 @@
 
 /* ------------------------------ */
-/* DESKTOP LARGE
-/* ------------------------------ */
-
-@media (max-width: 1600px) {
-
-/* MAIN LAYOUT/ELEMENTS
-/* ------------------------------ */
-
-/* HTML
-/* ------------------------------ */
-
-/* PAGE ELEMENTS
-/* ------------------------------ */
-
-
-/* CONTENT TYPES/VIEWS
-/* ------------------------------ */
-
-}
-
-
-/* ------------------------------ */
 /* TABLET
 /* ------------------------------ */
 
@@ -31,23 +9,21 @@
 /* ------------------------------ */
 .width > .inner{ max-width:inherit; margin:0 20px}
 
-.grid-third:nth-of-type(3n+1) .inner{ margin-right:20px}
-.grid-third:nth-of-type(3n+2) .inner{ margin:0 10px}
-.grid-third:nth-of-type(3n+3) .inner{ margin-left:20px}
+.grid-third .grid:nth-of-type(3n+1) .inner{ margin-right:20px}
+.grid-third .grid:nth-of-type(3n+2) .inner{ margin:0 10px}
+.grid-third .grid:nth-of-type(3n+3) .inner{ margin-left:20px}
 
 #bottles{ display:none}
 
-/* HTML
-/* ------------------------------ */
 
-/* PAGE ELEMENTS
+/* NAVIGATION
 /* ------------------------------ */
+.nav ul{ font-size:2em}
+.nav ul > li:not(:last-child){ margin-right:33px}
 
-
-/* CONTENT TYPES/VIEWS
-/* ------------------------------ */
 
 }
+
 
 @media (max-width: 800px) {
 	
@@ -58,37 +34,38 @@
 .one-sidebar.sidebar-second #content{ width:60%}
 .one-sidebar.sidebar-second .region-sidebar-second{ width:35%}
 
-.grid-third{ width:50%}
-.grid-third:nth-of-type(3n+1) > .inner,
-.grid-third:nth-of-type(3n+2) > .inner,
-.grid-third:nth-of-type(3n+3) > .inner{ margin:0}
-.grid-third:nth-of-type(even) > .inner{ margin-left:20px}
-.grid-third:nth-of-type(odd) > .inner{ margin-right:20px}
+.grid-third .grid{ width:50%; }
+.grid-third .grid:nth-of-type(3n+1) > .inner,
+.grid-third .grid:nth-of-type(3n+2) > .inner,
+.grid-third .grid:nth-of-type(3n+3) > .inner{ margin:0}
+.grid-third .grid:nth-of-type(even) > .inner{ margin-left:20px}
+.grid-third .grid:nth-of-type(odd) > .inner{ margin-right:20px}
 
 #header-image > .inner{ height:300px}
 .logged-in #badge{ top:-35px; left:50%}
 
 #footer .address-details{ padding-left:35%; margin-right:5%}
 
-/* HTML
-/* ------------------------------ */
 
-/* PAGE ELEMENTS
+/* NAVIGATION
 /* ------------------------------ */
+.nav ul{ font-size:1.8em}
+.nav ul > li:not(:last-child){ margin-right:9px}
 
 
 /* CONTENT TYPES/VIEWS
 /* ------------------------------ */
 
+
 /* FRONT */
 .front #main > .inner{ padding-top:0}
 .front #header-image h1{ margin-top:100px}
-.front .grid-third{ width:auto}
-.front .grid-third:nth-of-type(3n+1) > .inner,
-.front .grid-third:nth-of-type(3n+2) > .inner,
-.front .grid-third:nth-of-type(3n+3) > .inner,
-.front .grid-third:nth-of-type(even) > .inner,
-.front .grid-third:nth-of-type(odd) > .inner{ margin:0}
+.front .grid-third .grid{ width:auto}
+.front .grid-third .grid:nth-of-type(3n+1) > .inner,
+.front .grid-third .grid:nth-of-type(3n+2) > .inner,
+.front .grid-third .grid:nth-of-type(3n+3) > .inner,
+.front .grid-third .grid:nth-of-type(even) > .inner,
+.front .grid-third .grid:nth-of-type(odd) > .inner{ margin:0}
 
 /* NEWS */
 .view-news.view-display-id-home{ margin:0 -20px;}
@@ -96,9 +73,6 @@
 .view-news.view-display-id-home .views-row-first{ padding-top:30px}
 .view-news.view-display-id-home .views-row:nth-of-type(odd){ background:rgba(224,224,224,0.4)}
 .view-news.view-display-id-home .views-row .inner:after{ width:45px; height:35px; opacity:1; right:0; left:auto; bottom:-6px}
-
-/* DISTRIBUTORS */
-.view-distributors .views-row:not(:last-child){ margin-bottom:30px}
 
 
 }
@@ -115,25 +89,21 @@
 
 /* MAIN LAYOUT/ELEMENTS
 /* ------------------------------ */
-
 #content{ padding-bottom:20px}
+.content_two #content{ padding-bottom:20px}
+#content_two, #content_three,
+.content_two #content_two,
+.content_two.content_three #content_two{ padding:20px 0}
 
 .one-sidebar.sidebar-first #content,
 .one-sidebar.sidebar-second #content{ width:auto; float:none;}
 .one-sidebar.sidebar-second .region-sidebar-second,
 .one-sidebar.sidebar-first .region-sidebar-first{ display:none}
 
-.grid-third{ float:none; width:auto}
-.grid-third:nth-of-type(3n+1) > .inner,
-.grid-third:nth-of-type(3n+2) > .inner,
-.grid-third:nth-of-type(3n+3) > .inner{ margin:0}
-
-#footer{ display:none}
-#back-to-top{ display:block; font-size:1.6em; color:#e6e6e6; font-family:'helvbc'; text-transform:uppercase; text-align:center; background:#a81414; line-height:40px}
-#back-to-top span{ position:relative}
-#back-to-top span:before,
-#back-to-top span:after{ content:''; display:block; width:14px; height:11px; background:url(../images/sprite.png) -210px -40px; position:absolute;top:4px; left:-25px}
-#back-to-top span:after{ left:auto; right:-25px}
+.grid-third .grid{ float:none; width:auto}
+.grid-third .grid:nth-of-type(3n+1) > .inner,
+.grid-third .grid:nth-of-type(3n+2) > .inner,
+.grid-third .grid:nth-of-type(3n+3) > .inner{ margin:0}
 
 
 /* HEADER
@@ -167,7 +137,7 @@
 
 #utility-bar > .inner{ margin:0}
 #login,
-#forgot-password{ left:-20px; max-width:inherit; width:auto}
+#forgot-password{ left:0; max-width:inherit; width:auto}
 #utility-bar .form-item input{ max-width:280px; }
 
 #logo{ top:27px; width:auto; max-width:50%; left:20px}
@@ -179,6 +149,16 @@
 #header-image h1{ font-size:4.5em; padding:5px 10px}
 
 
+/* FOOTER
+/* ------------------------------ */
+#footer{ display:none}
+#back-to-top{ display:block; font-size:1.6em; color:#e6e6e6; font-family:'helvbc'; text-transform:uppercase; text-align:center; background:#a81414; line-height:40px}
+#back-to-top span{ position:relative}
+#back-to-top span:before,
+#back-to-top span:after{ content:''; display:block; width:14px; height:11px; background:url(../images/sprite.png) -210px -40px; position:absolute;top:4px; left:-25px}
+#back-to-top span:after{ left:auto; right:-25px}
+
+
 /* NAVIGATION
 /* ------------------------------ */
 
@@ -186,6 +166,10 @@
 #slides .inner{ margin:0}
 #header-nav{ position:static; }
 #user-nav{ position:static; bottom:auto;}
+
+.nav .menu-block-wrapper{ text-align:left;}
+.nav .menu-block-wrapper > ul.menu{ display:block; }
+.nav .menu-block-wrapper > ul.menu > li{ display:block; float:none}
 
 .nav{ background:#fff; width:100%; line-height:40px }
 .nav ul{ line-height:40px}
@@ -215,7 +199,7 @@
 #user-nav ul li ul li a:hover{ color:#000}
 
 
-/* ELEMENTS
+/* HTML ELEMENTS
 /* ------------------------------ */
 
 h2{ font-size:2.4em; }
@@ -252,10 +236,10 @@ a.download:before{ top:3px; background-size:225px; width:32px; height:46px}
 }
 
 
-
 @media (max-width: 480px) {
 
-
+/* HEADER
+/* ------------------------------ */
 #branding{ min-height:60px}
 #logo{ max-width:185px; margin-left:-5px}
 .logged-in #badge,
@@ -274,7 +258,6 @@ a.download:before{ top:3px; background-size:225px; width:32px; height:46px}
 
 
 }
-
 
 
 /* ------------------------------ */

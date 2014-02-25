@@ -41,6 +41,14 @@ function pace49_preprocess_html(&$variables, $hook) {
 	if (isset($_GET['response_type']) && $_GET['response_type'] == 'ajax') {
 		$variables['theme_hook_suggestions'][] = 'html__ajax';
 	}
+	
+	// body classes for regions
+	if (!empty($variables['page']['content_two'])) {
+		$variables['classes_array'][] = 'content_two';
+	}
+	if (!empty($variables['page']['content_three'])) {
+		$variables['classes_array'][] = 'content_three';
+	}
 
   // The body tag's classes are controlled by the $classes_array variable. To
   // remove a class from $classes_array, use array_diff().

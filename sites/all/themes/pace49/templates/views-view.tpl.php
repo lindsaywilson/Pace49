@@ -26,6 +26,20 @@
  *
  * @ingroup views_templates
  */
+switch($view->name){
+	case 'news':
+		if($view->current_display == 'home'){
+			$classes .= ' view-link-list grid-third';
+		}
+	break;
+	case 'careers':
+		$classes .= ' view-link-list';
+	break;
+	case 'distributors':
+	case 'contact':
+		$classes .= ' view-list grid-third';
+	break;
+} 
 ?>
 <div class="<?php print $classes; ?>">
   <?php print render($title_prefix); ?>
