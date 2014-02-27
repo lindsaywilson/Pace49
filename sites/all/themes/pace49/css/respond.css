@@ -119,7 +119,7 @@
 /* ------------------------------ */
 #header .inner{ min-height:inherit; margin:0}
 #branding{ min-height:80px}
-
+#header-bar a.icon:hover{ color:#fff}
 .mobile_toggle{ position:absolute; display:block}
 #nav_toggle{ left:0}
 
@@ -130,6 +130,7 @@
 #language_toggle ul li a{ padding:0; text-indent:-999em }
 #language_toggle ul li a:after{ width:27px; height:18px; top:11px}
 #language_toggle ul li.es a:after{ background-position:-180px 0; }
+#language_toggle ul li.en a:after{ background-position:-180px -20px; }
 
 #search_toggle{ left:65%}
 #search_toggle a.icon.search{ text-indent:-999em}
@@ -181,19 +182,20 @@
 .nav .menu-block-wrapper > ul.menu > li{ display:block; float:none}
 
 .nav{ background:#fff; width:100%; line-height:40px }
-.nav ul{ line-height:40px}
+.nav ul{ line-height:40px; font-size:2.2em}
 .nav div > ul{ border-bottom:1px solid #e6e6e6;}
 .nav ul li{ float:none; }
 .nav ul > li:not(:last-child){ margin:0; border-bottom:1px solid #e6e6e6;}
+.nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:0}
 .nav ul li a{ padding:0 20px; color:#3c3c3c;}
 .nav ul li.dropdown > a{ cursor:pointer; position:relative}
 .nav ul li.dropdown > a:after{ background:url(../images/sprite.png) -210px 0; width:11px; height:11px; display:block; content:''; position:absolute; top:14px; right:20px}
 .nav ul li.dropdown > a.open{ color:#c81e1e; }
 .nav ul li.dropdown > a.open:after{ background-position:-270px -20px}
 .nav ul li:hover ul,
-.nav ul li ul{ display:none; position:static; opacity:1; width:auto;}
-.nav ul li ul{ border-top:1px solid #e6e6e6;  padding:0; }
-.nav ul li ul li{ padding:0}
+.nav ul li ul{ display:none; position:static; opacity:1; width:auto; line-height:35px}
+.nav ul li ul{ border-top:1px solid #e6e6e6; padding:0; }
+.nav ul li ul li{ padding:0; line-height:40px}
 .nav ul li ul > li:not(:last-child){ border:none}
 .nav ul li ul li a{ }
 .nav ul li:hover ul ul,
@@ -201,6 +203,7 @@
 .nav ul li ul li ul{ display:block; }
 .nav ul li ul li ul{ border:none; line-height:30px; padding-bottom:10px}
 
+#user-nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:0}
 #user-nav ul{ border-top:3px solid #e6e6e6}
 #user-nav ul li.dropdown > a:after{ background-position:-250px 0}
 #user-nav ul li.dropdown > a.open:after{ background-position:-250px -20px}
@@ -264,6 +267,9 @@ a.download:before{ top:3px; background-size:225px; width:32px; height:46px}
 #header-image > .inner{ height:160px}
 #header-image h1{ font-size:3em; }
 
+.i18n-es #language_toggle{ left:40%}
+.i18n-es #search_toggle{ left:58%}
+
 
 /* CONTENT TYPES/VIEWS
 /* ------------------------------ */
@@ -272,6 +278,14 @@ a.download:before{ top:3px; background-size:225px; width:32px; height:46px}
 .front #header-image h1{ font-size:2.4em; margin-top:45px}
 .front #header-image h2{ font-size:1.5em; }
 
+
+}
+
+
+@media (max-width: 320px) {
+	
+.i18n-es #language_toggle{ left:38%}
+.i18n-es #search_toggle{ left:51%}
 
 }
 

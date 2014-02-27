@@ -39,6 +39,7 @@ body{ color:#3c3c3c; font-size:62.5%; background:url(../images/tile_bg.png) cent
 #header-bar a.icon{ color:#fff}
 #header-bar a.icon:hover{ color:#e41111}
 
+.page-user-password #login_toggle,
 .page-user-register #login_toggle{ display:none}
 #language_toggle ul, #language_toggle li{ margin:0; padding:0; list-style:none; font-size:1em; line-height:40px}
 #language_toggle ul li a{ font-size:1.8em; text-decoration:none; position:relative; display:block; color:#fff; padding-right:27px; }
@@ -75,6 +76,7 @@ body{ color:#3c3c3c; font-size:62.5%; background:url(../images/tile_bg.png) cent
 .login .form-actions input[type="submit"]{ marign-top:7px; color:#fff; border-color:#fff}
 .login .form-actions input[type="submit"]:hover{ border-color:#fff; background:#6f6f6f}
 #login .item-list ul{ float:right; font-size:1.8em; margin:0; padding:0; list-style:none; font-family:'helvbdc'; line-height:1.6em }
+.i18n-es #login .item-list ul{ font-size:1.6em; padding-top:4px}
 #login .item-list ul li.first{ display:none}
 #login .item-list ul li a{ color:#c8c8c8; text-decoration:none}
 #login .item-list ul li a:hover{ text-decoration:underline}
@@ -243,8 +245,8 @@ ul.tabs-primary li{ margin:0; padding:0 1px 0 0; border:none; background:none; t
 ul.tabs-primary li a{ border:none; background:#000; color:#fff; text-transform:uppercase; letter-spacing:0; border-radius:0; padding:2px 5px; text-decoration:none }
 ul.tabs-primary li a:hover{ opacity:0.6}
 
-#main #user-login,
-#main #user-pass{ max-width:280px}
+#main #user-login .form-item,
+#main #user-pass .form-item{ max-width:280px}
 
 
 /* ------------------------------ */
@@ -271,6 +273,7 @@ a.icon{ font-size:1.8em; text-decoration:none; position:relative; display:block}
 a.icon:after{ display:block; content:''; position:absolute; top:0; right:0; background:url(../images/sprite.png);}
 a.icon.menu{ padding-right:24px}
 a.icon.menu:after{ width:14px; height:13px; background-position:-140px 0; top:13px}
+a.icon.menu.close:after{ background-position:-140px -40px; width:15px; height:15px}
 a.icon.login{ padding-right:27px}
 a.icon.login:after{ width:17px; height:16px; top:12px; background-position:-40px 0}
 a.icon.login:hover:after{ background-position:-40px -20px}

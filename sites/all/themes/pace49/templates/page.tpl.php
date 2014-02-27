@@ -7,6 +7,8 @@
  * @see https://drupal.org/node/1728148
  */
  global $user;
+ global $language;
+ $lang = $language->language;
 ?>
 <div id="top"></div>
 <div id="page">
@@ -21,7 +23,7 @@
         <a class="icon login open" href="#"><?php print t('Login'); ?></a>
         <?php endif; ?>
         <?php if (user_is_logged_in()): ?>
-        <a class="icon account" href="/user/<?php print $user->uid ?>/edit"><?php print t('My Account'); ?></a>
+        <a class="icon account" href="<?php print ($lang == 'es'?'/es':''); ?>/user/<?php print $user->uid ?>/edit"><?php print t('My Account'); ?></a>
         <a class="icon logout" href="/user/logout"><?php print t('Logout'); ?></a>
         <?php endif; ?>
     </div>
@@ -41,7 +43,7 @@
     <div id="login" class="transition login">
     	<h2><?php print t('Client Area Access'); ?></h2>
     	<p><?php print t('Returning users can login to the Client Area to access documentation, news, and videos. New user?'); ?>
-        <a href="/user/register" class="reverse"><?php print t('Create a new account.'); ?></a></p>
+        <a href="<?php print ($lang == 'es'?'/es':''); ?>/user/register" class="reverse"><?php print t('Create a new account.'); ?></a></p>
         <h2><?php print t('Returning User Login'); ?></h2>
 		<?php
             $block = module_invoke('user', 'block_view', 'login');

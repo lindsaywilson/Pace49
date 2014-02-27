@@ -9,7 +9,6 @@
  global $language;
  $lang = $language->language;
  $uri = explode('/', request_uri());
- 
  $id = str_replace(' ', '-', $node->title);
 
  // Get youtube video id
@@ -33,11 +32,11 @@
 	 $node->type=='staff_member' || 
 	($node->type=='career' && $view_mode == 'teaser')
 	){
-  	include '/'.path_to_theme().'/templates/includes/node-edit.inc.php';
+  	include path_to_theme().'/templates/includes/node-edit.inc.php';
   }
   ?>  
   
-  <?php if ($unpublished || isset($uri[2]) && $uri[1] != 'procedures'): ?>
+  <?php if ($unpublished || isset($uri[2]) && $uri[1] != 'procedures' && $uri[1] != 'client-area' && $uri[2] != 'client-area'): ?>
     <header>
       
       <?php if( (isset($uri[2]) && $uri[1] != 'es') || isset($uri[4]) || $node->type == 'client_area_video'): ?>
@@ -65,7 +64,7 @@
             <div class="field field-name-body">
 				<?php print substr($body[0]['safe_value'],0,130).'...'; ?>
             </div>
-        	<p class="btn"><a class="btn" href="/news#<?php print $id; ?>">Read More</a></p>
+        	<p class="btn"><a class="btn" href="/news#<?php print $id; ?>"><?php print t('Read More'); ?></a></p>
         <?php endif ;
 	
 	// CAREER
@@ -80,7 +79,7 @@
 	
 	// VIDEO
 	elseif($node->type == 'client_area_video'): 
-	drupal_add_js('/'.path_to_theme().'/js/jquery.fitvids.js');
+	drupal_add_js(path_to_theme().'/js/jquery.fitvids.js');
 	$id = getYTVideoId($node->field_video_url['und'][0]['safe_value']);?>
     <div class="fitvids"><iframe width="640" height="360" src="//www.youtube.com/embed/<?php print $id; ?>?feature=player_detailpage" frameborder="0" allowfullscreen></iframe></div>
 	
