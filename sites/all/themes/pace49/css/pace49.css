@@ -17,7 +17,7 @@ body{ color:#3c3c3c; font-size:62.5%; background:url(../images/tile_bg.png) cent
 #content_three{ padding-bottom:70px}
 
 .one-sidebar.sidebar-first #content{ float:right; width:62%; }
-.one-sidebar.sidebar-first .region-sidebar-first{ float:left; width:37%; }
+.one-sidebar.sidebar-first .region-sidebar-first{ float:left; width:37%; margin-top:5px }
 .one-sidebar.sidebar-second #content{ float:left; width:52%}
 .one-sidebar.sidebar-second .region-sidebar-second{ padding-top:5px; float:right; max-width:420px; width:43.75%; margin-bottom:85px}
 
@@ -39,6 +39,7 @@ body{ color:#3c3c3c; font-size:62.5%; background:url(../images/tile_bg.png) cent
 #header-bar a.icon{ color:#fff}
 #header-bar a.icon:hover{ color:#e41111}
 
+.page-user-register #login_toggle{ display:none}
 #language_toggle ul, #language_toggle li{ margin:0; padding:0; list-style:none; font-size:1em; line-height:40px}
 #language_toggle ul li a{ font-size:1.8em; text-decoration:none; position:relative; display:block; color:#fff; padding-right:27px; }
 #language_toggle ul li a:hover{ color:#e41111}
@@ -125,18 +126,18 @@ body{ color:#3c3c3c; font-size:62.5%; background:url(../images/tile_bg.png) cent
 .nav ul, .nav li{ margin:0; padding:0; list-style:none; }
 .nav ul{ font-size:2.22em; font-family:'helvbc'; line-height:40px }
 .nav ul li{ position:relative}
-.nav ul > li:not(:last-child){ margin-right:55px}
+.nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:55px}
 .nav ul li a{ text-decoration:none; display:block; color:#3c3c3c; }
 .nav div > ul > li:hover > a,
 .nav ul li a:hover{ color:#c81e1e}
 
 .nav ul li:hover ul{ display:block; }
 .nav ul li ul{ font-size:1em; display:none; position:absolute; left:-10px; top:100%; background:#303030; width:300px; font-family:'helvbdc'; padding:10px 0 5px; text-align:left; line-height:1.5em}
-.nav ul li ul li{ padding:0 15px 5px; float:none; margin:0; display:block}
+.nav ul li ul li{ padding:0 15px 10px; line-height:1; float:none; margin:0; display:block}
 .nav ul li ul li a{ color:#fff; }
 
 .nav ul li ul li ul{ font-size:.8em; padding:0 0 5px; position:static; width:auto;}
-.nav ul li ul li ul li{ padding:0; }
+.nav ul li ul li ul li{ padding:0; line-height:1.5em }
 .nav ul li ul li ul li a{ color:#c8c8c8}
 
 .sidebar ul.menu,
@@ -155,7 +156,17 @@ body{ color:#3c3c3c; font-size:62.5%; background:url(../images/tile_bg.png) cent
 #user-nav div > ul > li:hover > a,
 #user-nav ul li a:hover{ color:#000}
 #user-nav ul li ul{ line-height:1.15; padding-bottom:10px}
+#user-nav .menu-block-wrapper  > ul > li:not(:last-child){ margin-right:146px}
 #user-nav ul li ul li a:hover{ color:#e41111}
+
+#header-nav .legal-menu{ display:none}
+#footer .legal-menu ul.menu,
+#footer .legal-menu ul.menu li{ margin:0; padding:0; list-style:none}
+#footer .legal-menu ul.menu{ font-size:1.5em}
+#footer .legal-menu ul.menu li{ float:left; font-size:.7em}
+#footer .legal-menu ul.menu li:first-child{ margin-right:5px}
+#footer .legal-menu ul.menu li a{ color:#3C3C3C}
+#footer .legal-menu ul.menu li a:hover{ color:#000}
 
 
 /* ------------------------------ */
@@ -399,8 +410,8 @@ table.draggable{ margin:10px 0; font-size:2em}
 .field-name-field-downloads-private ul li{  margin:0; padding:0; list-style:none; font-size:1em}
 .node-client-area-download h2{ margin-bottom:20px}
 .node-client-area-download h3{ font-family:'helvbc'; font-size:2.4em; line-height:1; margin-bottom:5px}
-.node-client-area-download .field-item{ min-height:53px; position:relative; padding-left:60px; margin-bottom:25px}
-.node-client-area-download .field-item:before{ content:''; display:block; position:absolute; width:40px; height:53px; background:url(../images/sprite.png); left:0; top:5px}
+.node-client-area-download .field-name-field-downloads-private .field-item{ min-height:53px; position:relative; padding-left:60px; margin-bottom:25px}
+.node-client-area-download .field-name-field-downloads-private .field-item:before{ content:''; display:block; position:absolute; width:40px; height:53px; background:url(../images/sprite.png); left:0; top:5px}
 .node-client-area-download ul li p{ font-size:2em; margin-bottom:0}
 
 

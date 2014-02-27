@@ -67,6 +67,12 @@
 			$block = module_invoke('menu_block', 'block_view', 1);
 			print render($block['content']);
 		?>
+        <div class="legal-menu">
+        <?php
+			$block = module_invoke('menu_block', 'block_view', 7);
+			print render($block['content']);
+		?>
+        </div>
 		</nav>
     </div>
 
@@ -127,9 +133,9 @@
 		if(isset($node) && $node->type == 'staff_member'){ $node = node_load(36); }
 		if(isset($node) && $node->type == 'distributor'){ $node = node_load(31); }
 		if(isset($node) && $node->type == 'client_area_video'){ $node = node_load(29); } 
-		if((strpos(request_uri(), '/procedures') !== FALSE)){
+		if(strpos(request_uri(), '/procedures') !== FALSE || strpos(request_uri(), '/procedimientos') !== FALSE){
 			$node = node_load(18); }
-		if((strpos(request_uri(), '/industries') !== FALSE) || strpos(request_uri(), '/industrias') !== FALSE){
+		if(strpos(request_uri(), '/industries') !== FALSE || strpos(request_uri(), '/industrias') !== FALSE){
 			$node = node_load(21);}
 		if((strpos(request_uri(), '/search') !== FALSE)){
 			$node = node_load(4);
@@ -229,6 +235,12 @@
 		$block = module_invoke('block', 'block_view', 2);
 		print render($block['content']);
 	?>
+    	<div class="legal-menu">
+    	<?php
+			$block = module_invoke('menu_block', 'block_view', 7);
+			print render($block['content']);
+		?>
+        </div>
     </div>
     
     <div class="contact-details">

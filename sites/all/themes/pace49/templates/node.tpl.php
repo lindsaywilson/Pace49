@@ -40,7 +40,7 @@
   <?php if ($unpublished || isset($uri[2]) && $uri[1] != 'procedures'): ?>
     <header>
       
-      <?php if( isset($uri[2]) && $uri[1] != 'es' && ($node->type == 'page' || $node->type == 'client_area_video')): ?>
+      <?php if( (isset($uri[2]) && $uri[1] != 'es') || isset($uri[4]) || $node->type == 'client_area_video'): ?>
       	<h2><?php print $node->title; ?></h2>
       <?php endif; ?>
 
@@ -61,9 +61,9 @@
             <?php print render($content['body']) ?>
             
         <?php else: ?>
-        	<h2><a href="/news#<?php print $id; ?>"><?php print $node->title_field[$lang][0]['safe_value']; ?></a></h2>
+        	<h2><a href="/news#<?php print $id; ?>"><?php print $node->title; ?></a></h2>
             <div class="field field-name-body">
-				<?php print substr($node->body[$lang][0]['safe_value'],0,130).'...'; ?>
+				<?php print substr($body[0]['safe_value'],0,130).'...'; ?>
             </div>
         	<p class="btn"><a class="btn" href="/news#<?php print $id; ?>">Read More</a></p>
         <?php endif ;

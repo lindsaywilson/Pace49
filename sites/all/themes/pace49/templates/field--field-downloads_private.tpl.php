@@ -43,6 +43,7 @@
  *
  * @ingroup themeable
  */
+ $tids = array(2,3,4,5,6,7,8,9,10,18);
 ?>
 
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
@@ -58,14 +59,28 @@
 		<?php 
 		//dpm($item);
 		$fileDesc = explode('##', $item['#file']->description);
-		$fileSize = round($item['#file']->filesize/1024, 2);
+		$fileSize = round($item['#file']->filesize/1024);
 		$mimetype =  explode('/', $item['#file']->filemime)
 		?>
         
         <h3><a rel="external" href="<?php print file_create_url($item['#file']->uri); ?>"><?php print $fileDesc[0]; ?></a></h3>
-        <p><?php print $fileDesc[1]; ?> - 
+        <p><?php 
+		if(isset($fileDesc[1])){ 
+			print $fileDesc[1]; 
+		}
+		if(in_array($element['#object']->field_client_area['und'][0]['tid'], $tids)) :?>
+        	<?php if(isset($fileDesc[1])): ?>
+            <br />
+            <?php endif; ?>
+        <?php else: ?>
+        	- 
+        <?php endif; ?>
 		<?php print $fileSize ?>k
-        <?php print '<span class="mimetype">'.$mimetype[1].'</span>'; ?></p>
+        <?php print '<span class="mimetype">'.$mimetype[1].'</span>'; ?>
+        <?php if(in_array($element['#object']->field_client_area['und'][0]['tid'], $tids)){
+			print t('Download');
+		}?>
+        </p>
         
       </li>
     <?php endforeach; ?>
