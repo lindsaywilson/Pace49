@@ -209,7 +209,7 @@
     var MOBILE = {};
 	MOBILE.subs = function(){
 		$('.nav ul.menu li.dropdown > a').click( function(){
-			$(this).parent().find('ul.menu').first().slideToggle();
+			$(this).next().slideToggle('fast');
 			if($(this).hasClass('open')){
 				$(this).removeClass('open');
 			}else{
@@ -219,7 +219,10 @@
 		});
 	};
 	MOBILE.removeSubs = function(){
-		$('.nav ul.menu li.dropdown > a').removeClass('open').unbind('click').parent().find('ul.menu').attr('style','');
+		$('.nav ul.menu li.dropdown > a').removeClass('open').unbind('click');
+		if(!window.isMobile){
+			$('.nav ul.menu li.dropdown > ul').removeAttr('style');
+		}
 	}
     MOBILE.toggleNav = function (button, nav){
 		id = button.parent().attr('id');
