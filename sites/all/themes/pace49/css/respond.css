@@ -20,7 +20,7 @@
 /* ------------------------------ */
 .nav ul{ font-size:2em}
 .nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:33px}
-#user-nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:107px}
+#logged-in-nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:75px}
 
 
 }
@@ -52,7 +52,7 @@
 /* ------------------------------ */
 .nav ul{ font-size:1.8em}
 .nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:36px}
-#user-nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:105px}
+#logged-in-nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:75px}
 
 
 /* CONTENT TYPES/VIEWS
@@ -82,7 +82,7 @@
 @media (max-width: 767px) {
 	
 .nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:9px}
-#user-nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:65px}
+#logged-in-nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:43px}
 	
 }
 
@@ -122,6 +122,9 @@
 #header-bar a.icon:hover{ color:#fff}
 .mobile_toggle{ position:absolute; display:block}
 #nav_toggle{ left:0}
+
+.page-user #language_toggle{ left:52%}
+.page-user #search_toggle{ left:90%}
 
 #login_toggle{ position:absolute; right:0; margin:0}
 #login_toggle a.account{ display:none}
@@ -175,7 +178,7 @@
 #slides{ display:none}
 #slides .inner{ margin:0}
 #header-nav{ position:static; }
-#user-nav{ position:static; bottom:auto;}
+#logged-in-nav{ position:static; bottom:auto;}
 
 .nav .menu-block-wrapper{ text-align:left;}
 .nav .menu-block-wrapper > ul.menu{ display:block; }
@@ -203,16 +206,16 @@
 .nav ul li ul li ul{ display:block; }
 .nav ul li ul li ul{ border:none; line-height:30px; padding-bottom:10px}
 
-#user-nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:0}
-#user-nav ul{ border-top:3px solid #e6e6e6}
-#user-nav ul li.dropdown > a:after{ background-position:-250px 0}
-#user-nav ul li.dropdown > a.open:after{ background-position:-250px -20px}
-#user-nav ul li ul{ border-top:1px solid #e6e6e6; line-height:40px; padding-bottom:0}
-#user-nav ul li ul li a:hover{ color:#000}
+#logged-in-nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:0}
+#logged-in-nav ul{ border-top:3px solid #e6e6e6; }
+#logged-in-nav ul li.dropdown > a:after{ background-position:-250px 0}
+#logged-in-nav ul li.dropdown > a.open:after{ background-position:-250px -20px}
+#logged-in-nav ul li ul{ border-top:1px solid #e6e6e6; line-height:40px; padding-bottom:0}
+#logged-in-nav ul li ul li a:hover{ color:#000}
 
 #header-nav .legal-menu{ display:block}
 .nav .legal-menu .menu-block-wrapper > ul.menu > li{ float:left; width:50%; background:#E6E6E6}
-.nav .legal-menu ul{ font-size:1.5em; font-family:'helvc'; line-height:30px}
+.nav .legal-menu ul{ font-size:1.5em; font-family:'helvc'; line-height:30px; height:30px; overflow:hidden}
 .nav .legal-menu ul > li:not(:last-child),
 .nav .legal-menu div > ul{ border:none}
 .nav .legal-menu ul li a{ padding-right:0}
@@ -269,6 +272,9 @@ a.download:before{ top:3px; background-size:225px; width:32px; height:46px}
 
 .i18n-es #language_toggle{ left:40%}
 .i18n-es #search_toggle{ left:58%}
+.i18n-es.page-user #search_toggle{ left:90%}
+
+.page-user #language_toggle{ left:55%}
 
 
 /* CONTENT TYPES/VIEWS
@@ -284,8 +290,7 @@ a.download:before{ top:3px; background-size:225px; width:32px; height:46px}
 
 @media (max-width: 320px) {
 	
-.i18n-es #language_toggle{ left:38%}
-.i18n-es #search_toggle{ left:51%}
+.i18n-es.page-user #language_toggle{ left:58%}
 
 }
 

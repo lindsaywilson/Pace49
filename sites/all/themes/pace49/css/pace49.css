@@ -39,8 +39,7 @@ body{ color:#3c3c3c; font-size:62.5%; background:url(../images/tile_bg.png) cent
 #header-bar a.icon{ color:#fff}
 #header-bar a.icon:hover{ color:#e41111}
 
-.page-user-password #login_toggle,
-.page-user-register #login_toggle{ display:none}
+.page-user #login_toggle{ display:none}
 #language_toggle ul, #language_toggle li{ margin:0; padding:0; list-style:none; font-size:1em; line-height:40px}
 #language_toggle ul li a{ font-size:1.8em; text-decoration:none; position:relative; display:block; color:#fff; padding-right:27px; }
 #language_toggle ul li a:hover{ color:#e41111}
@@ -68,7 +67,7 @@ body{ color:#3c3c3c; font-size:62.5%; background:url(../images/tile_bg.png) cent
 .forgot-open #forgot-password{ top:0; opacity:1}
 .login h2{ font-size:2.2em; margin:0 0 15px; line-height:1}
 .login p{ font-family:'helvmc'; font-size:1.5em; line-height:1.3em; margin-bottom:20px}
-.login a{ color:#c81e1e}
+.login a:hover{ color:#c81e1e; text-decoration:underline}
 .login .form-item{ margin:0 0 8px}
 .login .form-item.form-type-password,
 #fogot-password .form-item.form-type-textfield{ margin-bottom:15px}
@@ -152,14 +151,14 @@ body{ color:#3c3c3c; font-size:62.5%; background:url(../images/tile_bg.png) cent
 .sidebar ul.menu li ul li{ margin-bottom:0}
 .sidebar ul.menu li ul li a{ color:#787878}
 
-#user-nav{ bottom:-215px; position:absolute; width:100%; background:#a32424; z-index:7}
-#user-nav ul{ line-height:40px}
-#user-nav ul li a{ color:#fff}
-#user-nav div > ul > li:hover > a,
-#user-nav ul li a:hover{ color:#000}
-#user-nav ul li ul{ line-height:1.15; padding-bottom:10px}
-#user-nav .menu-block-wrapper  > ul > li:not(:last-child){ margin-right:146px}
-#user-nav ul li ul li a:hover{ color:#e41111}
+#logged-in-nav{ bottom:-215px; position:absolute; width:100%; background:#a32424; z-index:7}
+#logged-in-nav ul{ line-height:40px}
+#logged-in-nav ul li a{ color:#fff}
+#logged-in-nav div > ul > li:hover > a,
+#logged-in-nav ul li a:hover{ color:#000}
+#logged-in-nav ul li ul{ line-height:1.15; padding-bottom:10px}
+#logged-in-nav .menu-block-wrapper  > ul > li:not(:last-child){ margin-right:105px}
+#logged-in-nav ul li ul li a:hover{ color:#e41111}
 
 #header-nav .legal-menu{ display:none}
 #footer .legal-menu ul.menu,
@@ -211,10 +210,10 @@ img{ vertical-align:middle}
 ----------------------------------*/
 input, textarea, select{ font-size:1.5em}
 .form-item{ margin:0 0 15px}
-.form-item label{ margin:0 0 15px; font-size:2em; font-family:'helvbdc'; line-height:1; font-weight:normal}
+.form-item label{ margin:0 0 5px; font-size:2em; font-family:'helvbdc'; line-height:1; font-weight:normal}
 .form-item input[type="text"],
 .form-item input[type="password"]{ width:100%; border:none; padding:3px 5px}
-.form-actions input[type="submit"]{ font-family:'helvbdc'; background:none; border:2px solid #000; border-radius:5px; padding:2px 15px; font-size:1.8em; cursor:pointer; color:#000; }
+.form-actions input[type="submit"]{ font-family:'helvbdc'; background:none; border:2px solid #a32439; border-radius:5px; padding:2px 15px; font-size:1.8em; cursor:pointer; color:#a32439; }
 #main .form-item input[type="text"], 
 #main .form-item input[type="password"]{ border:1px solid #000}
 #main fieldset{ border:none}
@@ -245,8 +244,9 @@ ul.tabs-primary li{ margin:0; padding:0 1px 0 0; border:none; background:none; t
 ul.tabs-primary li a{ border:none; background:#000; color:#fff; text-transform:uppercase; letter-spacing:0; border-radius:0; padding:2px 5px; text-decoration:none }
 ul.tabs-primary li a:hover{ opacity:0.6}
 
-#main #user-login .form-item,
-#main #user-pass .form-item{ max-width:280px}
+#main #user-register-form .form-text,
+#main #user-login .form-text,
+#main #user-pass .form-text{ max-width:280px}
 
 
 /* ------------------------------ */
@@ -269,8 +269,8 @@ a.btn:hover{ color:#4f121c; border-color:#4f121c; text-decoration:none}
 p a.btn{ font-size:.9em}
 p.btn{ margin-top:30px}
 
-a.icon{ font-size:1.8em; text-decoration:none; position:relative; display:block}
-a.icon:after{ display:block; content:''; position:absolute; top:0; right:0; background:url(../images/sprite.png);}
+a.icon{ font-size:1.8em; text-decoration:none; position:relative; display:block; cursor:pointer}
+a.icon:after{ display:block; content:''; position:absolute; top:0; right:0; background:url(../images/sprite.png); cursor:pointer}
 a.icon.menu{ padding-right:24px}
 a.icon.menu:after{ width:14px; height:13px; background-position:-140px 0; top:13px}
 a.icon.menu.close:after{ background-position:-140px -40px; width:15px; height:15px}
@@ -283,6 +283,8 @@ a.icon.logout:hover:after{ background-position:-60px -40px}
 a.icon.account{ padding-right:22px}
 a.icon.account:after{ width:15px; height:16px; top:12px; background-position:-60px 0}
 a.icon.account:hover:after{ background-position:-60px -20px}
+a.icon.closex{ position:absolute; right:15px; top:25px}
+a.icon.closex:after{ background-position:-140px -40px; width:15px; height:15px;}
 
 a.download{ font-family:'helvbc'; font-size:2.4em; min-height:53px; position:relative; display:block; padding-left:60px; line-height:1.2em}
 a.download:before{ content:''; display:block; position:absolute; width:40px; height:53px; background:url(../images/sprite.png); left:0; top:5px}
@@ -303,7 +305,7 @@ p.search-snippet{ margin:0}
 /* REGISTER
 ----------------------------------*/
 #user-register-form input[type="text"]{ max-width:400px}
-.form-item .description{ font-size:2em}
+.form-item .description{ font-size:2em; margin:10px 0 20px}
 
 
 /* MY ACCOUNT

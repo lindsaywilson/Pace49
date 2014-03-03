@@ -41,9 +41,10 @@
   <div class="inner">
 
     <div id="login" class="transition login">
-    	<h2><?php print t('Client Area Access'); ?></h2>
+    	<a class="icon closex"></a>
+        <h2><?php print t('Client Area Access'); ?></h2>
     	<p><?php print t('Returning users can login to the Client Area to access documentation, news, and videos. New user?'); ?>
-        <a href="<?php print ($lang == 'es'?'/es':''); ?>/user/register" class="reverse"><?php print t('Create a new account.'); ?></a></p>
+        <a href="<?php print ($lang == 'es'?'/es':''); ?>/user/register"><?php print t('Create a new account.'); ?></a></p>
         <h2><?php print t('Returning User Login'); ?></h2>
 		<?php
             $block = module_invoke('user', 'block_view', 'login');
@@ -51,6 +52,7 @@
         ?>
     </div>
     <div id="forgot-password" class="transition login">
+    	<a class="icon closex"></a>
     	<h2><?php print t('Forgot Password'); ?></h2>
         <p><?php print t('Enter your username or email address and your new password will be sent to you.'); ?></p>
         <div class="load loading"></div>
@@ -84,7 +86,7 @@
   global $user;
   $roles = array('authenticated user');
   if (array_intersect($roles, $user->roles)): ?>
-      <div id="user-nav" class="width nav clearfix">
+      <div id="logged-in-nav" class="width nav clearfix">
       <div class="inner clearfix">
         <?php
         $block = module_invoke('menu_block', 'block_view', 4);
