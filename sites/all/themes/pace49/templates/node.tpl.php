@@ -36,10 +36,10 @@
   }
   ?>  
   
-  <?php if ($unpublished || isset($uri[2]) && $uri[1] != 'procedures' && $uri[1] != 'client-area' && $uri[2] != 'client-area'): ?>
+  <?php if ($unpublished || isset($uri[2]) && $uri[1] != 'client-area' && $uri[2] != 'client-area' && $node->type != 'news' && $node->type != 'career' && $node->type != 'client_area_download' ): ?>
     <header>
       
-      <?php if( (isset($uri[2]) && $uri[1] != 'es') || isset($uri[4]) || $node->type == 'client_area_video'): ?>
+      <?php if( (isset($uri[2]) && $uri[1] != 'es') || (isset($uri[3]) && $uri[1] == 'es') || isset($uri[4]) || $node->type == 'client_area_video'): ?>
       	<h2><?php print $node->title; ?></h2>
       <?php endif; ?>
 

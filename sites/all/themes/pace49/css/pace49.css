@@ -61,8 +61,8 @@ body{ color:#3c3c3c; font-size:62.5%; background:url(../images/tile_bg.png) cent
 .mobile_toggle{ display:none}
 
 #utility-bar{ position:relative; z-index:9}
-#login,
-#forgot-password{ position:absolute; background:#303030; top:-370px; left:-15px; color:#fff; padding:20px 15px; max-width:250px; opacity:0}
+#login, #forgot-password{ position:absolute; background:#303030; top:-370px; left:-15px; color:#fff; padding:20px 15px; max-width:250px; opacity:0}
+.i18n-es #login, .i18n-es #forgot-password{ max-width:320px}
 .login-open #login,
 .forgot-open #forgot-password{ top:0; opacity:1}
 .login h2{ font-size:2.2em; margin:0 0 15px; line-height:1}
@@ -133,7 +133,7 @@ body{ color:#3c3c3c; font-size:62.5%; background:url(../images/tile_bg.png) cent
 .nav ul li a:hover{ color:#c81e1e}
 
 .nav ul li:hover ul{ display:block; }
-.nav ul li ul{ font-size:1em; display:none; position:absolute; left:-10px; top:100%; background:#303030; width:300px; font-family:'helvbdc'; padding:10px 0 5px; text-align:left; line-height:1.5em}
+.nav ul li ul{ font-size:1em; display:none; position:absolute; left:-10px; top:100%; background:#303030; width:315px; font-family:'helvbdc'; padding:10px 0 5px; text-align:left; line-height:1.5em}
 .nav ul li ul li{ padding:0 15px 10px; line-height:1; float:none; margin:0; display:block}
 .nav ul li ul li a{ color:#fff; }
 
@@ -228,7 +228,7 @@ input, textarea, select{ font-size:1.5em}
 .posted{ font-family:'helvbdc'; font-size:2em; margin:0 0 15px; line-height:1.1em}
 .mimetype{ text-transform:uppercase}
 
-.transition{ -webkit-transition: all .2s ease-in-out; -moz-transition: all .2s ease-in-out; -ms-transition: all .2s ease-in-out; -o-transition: all .2s ease-in-out; transition: all .2s ease-in-out;}
+.transition{ -webkit-transition: all .4s ease-in-out; -moz-transition: all .4s ease-in-out; -ms-transition: all .4s ease-in-out; -o-transition: all .4s ease-in-out; transition: all .4s ease-in-out;}
 
 
 /* DRUPAL OVERRIDES
