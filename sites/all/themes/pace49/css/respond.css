@@ -74,7 +74,7 @@
 .view-news.view-display-id-home .views-row{ margin:0; padding:20px}
 .view-news.view-display-id-home .views-row-first{ padding-top:30px}
 .view-news.view-display-id-home .views-row:nth-of-type(odd){ background:rgba(224,224,224,0.4)}
-.view-news.view-display-id-home .views-row .inner:after{ width:45px; height:35px; opacity:1; right:0; left:auto; bottom:-6px}
+.view-news.view-display-id-home .views-row .inner:after{ width:45px; height:36px; opacity:1; right:0; left:auto; bottom:-6px}
 
 
 }
@@ -307,6 +307,17 @@ only screen and (        min-device-pixel-ratio: 2),
 only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) { 
   
+#language_toggle ul li a:after,
+#search .form-actions input[type="submit"],
+a.icon:after,
+a.download:before,
+.node-client-area-download .field-name-field-downloads-private .field-item:before,
+#back-to-top span:after,
+.nav ul li.dropdown > a:after{ background-image:url(../images/sprite@2x.png); background-size:281px 58px}
+
+#bottles{ background-image:url(../images/bg_bottles@2x.png); background-size:87px 68px;}
+.view-news.view-display-id-home .views-row .inner:after{ background-image:url(../images/bg_bottles@2x.png);}
+#footer .address-details{  background-image:url(../images/badge_footer@2x.png; background-size:186px 186px}
 
 
 }
