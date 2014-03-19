@@ -312,11 +312,12 @@ only screen and (                min-resolution: 2dppx) {
 a.icon:after,
 a.download:before,
 .node-client-area-download .field-name-field-downloads-private .field-item:before,
+#back-to-top span:before,
 #back-to-top span:after,
 .nav ul li.dropdown > a:after{ background-image:url(../images/sprite@2x.png); background-size:281px 58px}
 
 #bottles{ background-image:url(../images/bg_bottles@2x.png); background-size:87px 68px;}
-.view-news.view-display-id-home .views-row .inner:after{ background-image:url(../images/bg_bottles@2x.png);}
+.view-news.view-display-id-home .views-row .inner:after{ background-image:url(../images/bg_bottles@2x.png); height:35px}
 #footer .address-details{  background-image:url(../images/badge_footer@2x.png; background-size:186px 186px}
 
 

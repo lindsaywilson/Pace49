@@ -208,14 +208,14 @@ img{ vertical-align:middle}
 
 /* FORMS
 ----------------------------------*/
-input, textarea, select{ font-size:1.5em}
+input, textarea, select{ font-size:1.5em; border-radius:0}
 .form-item{ margin:0 0 15px}
 .form-item label{ margin:0 0 5px; font-size:2em; font-family:'helvbdc'; line-height:1; font-weight:normal}
 .form-item input[type="text"],
 .form-item input[type="password"]{ width:100%; border:none; padding:3px 5px}
 .form-actions input[type="submit"]{ font-family:'helvbdc'; background:none; border:2px solid #a32439; border-radius:5px; padding:2px 15px; font-size:1.8em; cursor:pointer; color:#a32439; }
 #main .form-item input[type="text"], 
-#main .form-item input[type="password"]{ border:1px solid #000}
+#main .form-item input[type="password"]{ border:1px solid #3C3C3C}
 #main fieldset{ border:none}
 
 
@@ -247,6 +247,9 @@ ul.tabs-primary li a:hover{ opacity:0.6}
 #main #user-register-form .form-text,
 #main #user-login .form-text,
 #main #user-pass .form-text{ max-width:280px}
+
+ol.search-results,
+ol.search-results li{ margin-left:0; padding-left:0}
 
 
 /* ------------------------------ */

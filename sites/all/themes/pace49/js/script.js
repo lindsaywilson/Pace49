@@ -48,8 +48,14 @@
 			if($(this).hasClass('open')){
 				$(this).removeClass('open');
 				$(this).addClass('close');
-				$('body').addClass('login-open');
-				$('body').removeClass('forgot-open');
+				if($('body').hasClass('forgot-open')){
+					$('body').removeClass('forgot-open');
+					setTimeout(function (){
+						$('body').addClass('login-open');
+					}, 350);
+				}else{
+					$('body').addClass('login-open');
+				}
 			} else{
 				$(this).addClass('open');
 				$(this).removeClass('close');
@@ -59,9 +65,11 @@
 		});
 		$('#login .item-list a').click( function(){
 			$('body').removeClass('login-open');
-			$('body').addClass('forgot-open');
 			$('#login_toggle a').removeClass('close');
 			$('#login_toggle a').addClass('open');
+			setTimeout(function (){
+				$('body').addClass('forgot-open');
+			}, 350);
 			$.ajax({
 				type: 'GET',
 				url: $(this).attr('href')+' #user-pass',
