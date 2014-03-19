@@ -1,7 +1,7 @@
 <?php
 // Roles that can edit
 global $user;
-$roles = array('administrator','clientadmin');
+$roles = array('administrator','Client Admin');
 
 // If current user has edit role
 if (array_intersect($roles, $user->roles)): ?>
