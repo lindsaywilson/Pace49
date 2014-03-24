@@ -73,7 +73,7 @@ body{ color:#3c3c3c; font-size:62.5%; background:url(../images/tile_bg.png) cent
 #fogot-password .form-item.form-type-textfield{ margin-bottom:15px}
 .login .form-item label{ font-size:1.8em; margin:0 0 8px}
 .login .form-actions input[type="submit"]{ marign-top:7px; color:#fff; border-color:#fff}
-.login .form-actions input[type="submit"]:hover{ border-color:#fff; background:#6f6f6f}
+.login .form-actions input[type="submit"]:hover{ color:#fff; border-color:#fff; background:#6f6f6f}
 #login .item-list ul{ float:right; font-size:1.8em; margin:0; padding:0; list-style:none; font-family:'helvbdc'; line-height:1.6em }
 .i18n-es #login .item-list ul{ font-size:1.6em; padding-top:4px}
 #login .item-list ul li.first{ display:none}
@@ -214,6 +214,7 @@ input, textarea, select{ font-size:1.5em; border-radius:0}
 .form-item input[type="text"],
 .form-item input[type="password"]{ width:100%; border:none; padding:3px 5px}
 .form-actions input[type="submit"]{ font-family:'helvbdc'; background:none; border:2px solid #a32439; border-radius:5px; padding:2px 15px; font-size:1.8em; cursor:pointer; color:#a32439; }
+.form-actions input[type="submit"]:hover{ color:#4f121c; border-color:#4f121c;}
 #main .form-item input[type="text"], 
 #main .form-item input[type="password"]{ border:1px solid #3C3C3C}
 #main fieldset{ border:none}
