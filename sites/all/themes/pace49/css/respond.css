@@ -13,6 +13,7 @@
 .grid-third .grid:nth-of-type(3n+2) .inner{ margin:0 10px}
 .grid-third .grid:nth-of-type(3n+3) .inner{ margin-left:20px}
 
+#badge{ left:49%}
 #bottles{ display:none}
 
 
@@ -43,7 +44,7 @@
 .grid-third .grid:nth-of-type(odd) > .inner{ margin-right:20px}
 
 #header-image > .inner{ height:300px}
-.logged-in #badge{ top:-35px; left:50%}
+#badge{ top:30px}
 
 #footer .address-details{ padding-left:35%; margin-right:5%}
 
@@ -83,6 +84,8 @@
 	
 .nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:9px}
 #logged-in-nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:43px}
+
+#badge{ left:46%}
 	
 }
 
@@ -154,8 +157,7 @@
 #utility-bar .form-item input{ max-width:280px; }
 
 #logo{ top:27px; width:auto; max-width:50%; left:20px}
-.logged-in #badge,
-#badge{ width:auto; max-width:160px; left:auto; right:0; top:0; z-index:8}
+#badge{ width:auto; max-width:160px; left:auto; right:20px; top:6px; z-index:8}
 .contact-details{ display:none}
 
 #header-image > .inner{ height:240px}
@@ -264,8 +266,7 @@ a.download:before{ top:3px; background-size:225px; width:32px; height:46px}
 /* ------------------------------ */
 #branding{ min-height:60px}
 #logo{ max-width:185px; margin-left:-5px}
-.logged-in #badge,
-#badge{ max-width:120px; }
+#badge{ right:10px; }
 
 #header-image > .inner{ height:160px}
 #header-image h1{ font-size:3em; }
@@ -284,13 +285,17 @@ a.download:before{ top:3px; background-size:225px; width:32px; height:46px}
 .front #header-image h1{ font-size:2.4em; margin-top:45px}
 .front #header-image h2{ font-size:1.5em; }
 
+.view-news.view-display-id-home .views-row .inner:after{ display:none}
+
 
 }
 
 
-@media (max-width: 320px) {
+@media (max-width: 380px) {
 	
 .i18n-es.page-user #language_toggle{ left:58%}
+
+#badge{ max-width:120px; top:40px }
 
 }
 

@@ -85,7 +85,7 @@ body{ color:#3c3c3c; font-size:62.5%; background:url(../images/tile_bg.png) cent
 #header .inner{ position:relative; min-height:175px}
 #branding{ position:relative}
 #logo{position:absolute; top:55px; width:44.75%}
-#badge{ position:absolute; left:45.3%; top:-47px; width:20.41%; z-index:10}
+#badge{ position:absolute; left:42.18%; top:16px; width:25%; z-index:10}
 #bottles{ background:url(../images/bg_bottles.png); width:87px; height:68px; position:absolute; top:37px; left:69.58% }
 
 .contact-details, .address-details{ font-family:'helvmc'}

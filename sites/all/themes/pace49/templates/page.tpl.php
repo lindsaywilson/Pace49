@@ -115,7 +115,7 @@
 
     <div id="branding">
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="/<?php print path_to_theme().'/images/logo.png' ?>" alt="<?php print t('Home'); ?>" /></a>
-        <div id="badge"><img src="/<?php print path_to_theme().'/images/badge_header.png' ?>" alt="Pace 30th Anniversary 1983-2013" /></div>
+        <div id="badge"><img src="/<?php print path_to_theme().'/images/badge_header_new.png' ?>" alt="Pace ACBD System" /></div>
         <div id="bottles"></div>
         
         <div class="contact-details">
