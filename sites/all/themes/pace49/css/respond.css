@@ -19,8 +19,8 @@
 
 /* NAVIGATION
 /* ------------------------------ */
-.nav ul{ font-size:2em}
-.nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:33px}
+.nav ul{ font-size:1.8em}
+.nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:16px}
 #logged-in-nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:75px}
 
 
@@ -52,7 +52,7 @@
 /* NAVIGATION
 /* ------------------------------ */
 .nav ul{ font-size:1.8em}
-.nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:36px}
+.nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:10px}
 #logged-in-nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:75px}
 
 
@@ -82,7 +82,9 @@
 
 @media (max-width: 767px) {
 	
-.nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:9px}
+.nav ul{ font-size:1.5em}
+.nav ul ul{ font-size:1.2em}
+.nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:5px}
 #logged-in-nav .menu-block-wrapper > ul > li:not(:last-child){ margin-right:43px}
 
 #badge{ left:46%}

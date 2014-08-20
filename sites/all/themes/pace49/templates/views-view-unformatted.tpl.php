@@ -20,6 +20,7 @@
 		break;
 	case 'distributors':
 	case 'contact':
+	case 'industry_partners':
 		$classes_array[$id] .= ' grid';
 	break;
   }
