@@ -382,6 +382,8 @@ table.draggable{ margin:10px 0; font-size:2em}
 
 /* CAREERS
 ----------------------------------*/
+.view-careers .views-row{ margin-top:40px}
+.view-careers  p.btn{ margin-top:10px}
 .node-career h2{ margin:0 0 10px 0}
 .node-career.view-mode-full h2{ margin-right:170px}
 .node-career a.top{ position:absolute; right:0; top:5px}
